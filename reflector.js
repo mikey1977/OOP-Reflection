@@ -4,6 +4,11 @@
 
 //Use Object.getPrototypeOf()
 
-function reflector() {
+var User = require('./User.js');
+var GroupUser = require('./GroupUser.js');
+var SuperUser = require('./SuperUser.js');
 
+function reflector(object) {
+  //Magically do something
+  console.log(Object.getPrototypeOf(object));
 }

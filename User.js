@@ -4,18 +4,24 @@
 
 //SuperUser inherits from GroupUser
 
-function User(name) {
-  this.name = name;
+//create methods on the prototypes of each class
+
+function User(name, age, beerDrinking, sleeping, programming) {
+  this._name = name;
+  this._age = age;
+  this._beerDrinking = beerDrinking;
+  this._sleeping = sleeping;
+  this._programming = programming;
 }
 
+User.prototype.beerDrinking = function() {
+  return this._beerDrinking;
+};
 
+User.prototype.sleeping = function() {
+  return this._sleeping;
+};
 
-
-
-// Write a function called reflector that takes in an instance of an object
-//  and use console.log() to print out the name of the current class,
-//  and the methods and properties that belong to only that class.
-
-function reflector() {
-
-}
+User.prototype.programming = function() {
+  return this._programming;
+};

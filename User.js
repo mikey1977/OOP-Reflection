@@ -12,7 +12,7 @@ function User(name, age, beerDrinking, sleeping, programming) {
   this._beerDrinking = beerDrinking;
   this._sleeping = sleeping;
   this._programming = programming;
-  // console.log('&&&&77777', this._programming);
+
 }
 User.prototype.name = function() {
   return this._name;
@@ -21,7 +21,6 @@ User.prototype.name = function() {
 User.prototype.age = function() {
   return this._age;
 };
-
 
 User.prototype.beerDrinking = function() {
   console.log('beer');
@@ -37,8 +36,5 @@ User.prototype.programming = function() {
   console.log('confusion');
   return this._programming;
 };
-
-// var theUser = new User('Bubba', 109, true, true, true);
-// console.log(theUser);
 
 module.exports = User;

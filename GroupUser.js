@@ -8,14 +8,21 @@
 
 var User = require('./User.js');
 
-function GroupUser(name, age, beerDrinking, sleeping, programming) {
-  this.name = name;
-  User.call(this, name, age, beerDrinking, sleeping, programming);
+function GroupUser(name, age, pooping) {
+  User.call(this, name, age);
+  this._pooping = pooping;
+
 }
 
-GroupUser.prototytpe = Object.create(User.prototype, {
+GroupUser.prototype.pooping = function() {
+  console.log('stinky');
+  return this._pooping;
+};
+
+GroupUser.prototype = Object.create(User.prototype, {
   constructor : {
-    value : User,
-    name : this.name
+    value : GroupUser
   }
 });
+
+module.exports = GroupUser;

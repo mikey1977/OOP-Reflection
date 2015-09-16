@@ -9,6 +9,18 @@ var GroupUser = require('./GroupUser.js');
 var SuperUser = require('./SuperUser.js');
 
 function reflector(object) {
-  //Magically do something
-  console.log(Object.getPrototypeOf(object));
+
+// if Object Class, no more prototypes;
+  if (Object.getPrototypeOf(object) !== null) {
+//pass the super object
+    reflector(Object.getPrototypeOf(object));
+  }
+//print class names
+  console.log(object.constructor.name);
+
+//get properties
+  console.log(Object.keys(object));
+
 }
+
+reflector(SuperUser.prototype);
